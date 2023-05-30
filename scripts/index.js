@@ -10,7 +10,7 @@ async function getPosts() {
         const response = await fetch(url);
         const data = await response.json();
 
-        const posts = data.news;
+        const posts = data.news.reverse();
 
         if (posts != null) {
             posts.forEach((post) => {
