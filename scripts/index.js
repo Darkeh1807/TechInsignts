@@ -1,4 +1,4 @@
-const url = " https://api.worldnewsapi.com/search-news?api-key=772db3c79fcc406f92e72ae7fc66461e&text=sports&number=100";
+const url = " https://api.worldnewsapi.com/search-news?api-key=772db3c79fcc406f92e72ae7fc66461e&text=technology&number=100";
 
 const wrapper = document.createElement('div');
 wrapper.classList.add("wrapper");
