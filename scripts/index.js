@@ -1,4 +1,4 @@
-const url = "https://newsapi.org/v2/everything?q=tech&apiKey=c0dd0cfd4aef4f268e422c99d2b912e4";
+const url = " https://api.worldnewsapi.com/search-news?api-key=772db3c79fcc406f92e72ae7fc66461e&text=sports&number=100";
 
 const wrapper = document.createElement('div');
 wrapper.classList.add("wrapper");
@@ -10,12 +10,12 @@ async function getPosts() {
         const response = await fetch(url);
         const data = await response.json();
 
-        const posts = data.articles;
+        const posts = data.news;
 
         if (posts != null) {
             posts.forEach((post) => {
                 const card = document.createElement("div");
-                const imagePath = post.urlToImage;
+                const imagePath = post.image;
                 card.classList.add("card");
                 card.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imagePath})`;
                 wrapper.appendChild(card);
@@ -38,7 +38,7 @@ async function getPosts() {
 
                 const postTime = document.createElement("p")
                 postTime.classList.add("postTime");
-                const time = post.publishedAt;
+                const time = post.publish_date;
 
                 postTime.innerHTML = time;
                 title.appendChild(postTime)
@@ -59,3 +59,13 @@ async function getPosts() {
 getPosts().catch((err) => {
     console.log(err);
 });
+
+
+
+
+
+
+
+
+
+
