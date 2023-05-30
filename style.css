@@ -251,11 +251,11 @@ svg#animation.animated #freepik--character-1--inject-4 {
   margin-top: 6px;
 }
 
-#tech-list ul{
+#tech-list ul {
   margin-right: 0px;
 }
 
-#tech-list ul li a{
+#tech-list ul li a {
   background-color: #ebe8e8;
   border: 0px solid black;
   padding: 10px 30px 10px 30px;
@@ -265,4 +265,15 @@ svg#animation.animated #freepik--character-1--inject-4 {
   -moz-border-radius: 255px;
   -ms-border-radius: 255px;
   -o-border-radius: 255px;
+}
+footer {
+  height: 10vh;
+  width: 100vw;
+  background-color: #eb3324;
+}
+
+/* Detail Page */
+#post-title {
+  margin-top: 50px;
+  overflow: scroll;
 }
