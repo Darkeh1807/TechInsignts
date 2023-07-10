@@ -13,10 +13,10 @@ console.log("Content:", content);
 console.log("Image URL:", imageUrl);
 console.log("URL:", url);
 
-const postImage = document.querySelector(".post-img");
+const postImage = document.getElementById("post-img");
 const postTitle = document.getElementById("post-title");
 const postContent = document.getElementById("content");
-
+postImage.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imageUrl})` 
 postTitle.innerHTML = title;
 postContent.innerHTML = content;
-postImage.src = imageUrl;
+
