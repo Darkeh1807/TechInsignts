@@ -5,7 +5,7 @@
 }
 header {
   background-color: white;
-  height: 10vh;
+  height: 15vh;
   position: fixed;
   left: 0px;
   right: 0px;
@@ -280,9 +280,12 @@ footer {
 }
 
 #post-img{
-  height: 60vh;
+  height: 70vh;
   width: 100vw;
   background-color: red;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #content{
@@ -291,4 +294,18 @@ padding: 20px;
   line-height: 2;
   color: #333;
   margin-bottom: 10px;
+}
+
+#content:first-child{
+  font-size: 30px;
+}
+
+#author{
+  padding: 20px;
+}
+
+#url{
+  padding: 20px;
+  color: blue;
+  cursor: pointer;
 }

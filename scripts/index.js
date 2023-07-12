@@ -1,5 +1,5 @@
 const url =
-  " https://api.worldnewsapi.com/search-news?api-key=772db3c79fcc406f92e72ae7fc66461e&text=technology&number=100";
+  "https://api.worldnewsapi.com/search-news?api-key=772db3c79fcc406f92e72ae7fc66461e&text=headline&number=100";
 
 const wrapper = document.createElement("div");
 wrapper.classList.add("wrapper");
@@ -7,10 +7,15 @@ document.body.appendChild(wrapper);
 
 async function getPosts() {
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const data = await response.json();
 
-    const posts = data.news.reverse();
+    const posts = data.news;
     console.log(posts);
 
     if (posts != null) {
@@ -33,8 +38,9 @@ async function getPosts() {
           queryParams.append("content", post.text);
           queryParams.append("image", post.image);
           queryParams.append("url", post.url);
+          queryParams.append("author", post.author);
           const detailsPageUrl = `details.html?${queryParams.toString()}`;
-          
+
           window.location.href = detailsPageUrl;
         });
 
