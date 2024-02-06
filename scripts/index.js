@@ -1,9 +1,21 @@
+const title = document.title;
+
 const url =
-  "https://api.worldnewsapi.com/search-news?api-key=772db3c79fcc406f92e72ae7fc66461e&text=headline&number=100";
+  `https://api.worldnewsapi.com/search-news?api-key=772db3c79fcc406f92e72ae7fc66461e&text=${title}&number=99`;
 
 const wrapper = document.createElement("div");
 wrapper.classList.add("wrapper");
 document.body.appendChild(wrapper);
+
+const loadingElement = document.createElement("div");
+loadingElement.classList.add("loading");
+loadingElement.textContent = "Loading...";
+document.body.appendChild(loadingElement);
+
+// Hide loading element when content is loaded
+window.addEventListener("load", () => {
+  loadingElement.style.display = "";
+});
 
 async function getPosts() {
   try {
@@ -16,9 +28,10 @@ async function getPosts() {
     const data = await response.json();
 
     const posts = data.news;
-    console.log(posts);
+
 
     if (posts != null) {
+      loadingElement.style.display = "none";
       posts.forEach((post) => {
         const card = document.createElement("div");
         const imagePath = post.image;
@@ -56,14 +69,17 @@ async function getPosts() {
         btn.innerHTML = "Read more";
         card.appendChild(btn);
       });
-    } else {
+    } else if (posts == null) {
+
+    }
+    else {
       console.log("No posts found in the response.");
     }
   } catch (error) {
-    console.log(error);
+    alert(`There is an error: ${error}`)
   }
 }
 
 getPosts().catch((err) => {
-  console.log(err);
+  throw err;
 });

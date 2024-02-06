@@ -27,7 +27,7 @@ header {
 .wrapper {
   height: 50vh;
   width: 100vw;
-  background-color: whitesmoke;
+  background-color: white;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
@@ -308,4 +308,10 @@ padding: 20px;
   padding: 20px;
   color: blue;
   cursor: pointer;
+}
+
+.loading{
+  color: #000;
+  font-size: 25px;
+  text-align: center;
 }
